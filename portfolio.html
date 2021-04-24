@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>portfolio</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+        <style>
+
+          
+          * {
+  box-sizing: border-box;
+}
+
+html {
+  
+  line-height: 1.5;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+body {
+  
+  color: #333333;
+  background-color: #fafafa;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+#welcome-section {
+  height: 100vh;
+}
+
+.btn {
+  border: 0;
+  background: 0;
+  cursor: pointer;
+}
+
+.header-top {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+}
+.btn-nav-main-menu-wrapper {
+  padding: 1rem;
+  text-transform: uppercase;
+  color: ;
+}
+
+
+.nav-main {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #116466;
+}
+.btn-download-resume {
+
+  color: #ffffff;
+  border-radius: 100px;
+  border: 1px solid #fcbf3a;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  transition: all 0.5s;
+}
+
+.nav-main ul {
+  display: none;
+}
+
+.nav-main ul li {
+  text-transform: uppercase;
+  margin-right: 1rem;
+  color: #ffffff;
+  transition: all 0.5s;
+}
+
+.nav-main ul li:hover {
+  color: #fcbf3a;
+  text-decoration: line-through;
+}
+
+.nav-main ul li a {
+  color: inherit;
+}
+
+.nav-main ul li a:visited {
+  color: inherit;
+}
+
+.main-content {
+  height: calc(100vh - 60px);
+  background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+}
+
+.about h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.about p {
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.creations {
+  color: #ffffff;
+}
+
+.creations h3 {
+  text-align: center;
+  font-size: 2rem;
+  padding: 20px;
+}
+
+.creations-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.creation-card {
+  flex: calc(100% / 3 - 10px) 0 0;
+  border: 1px solid #fff;
+  min-height: 200px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.creation-card span {
+   text-align: center; 
+}
+
+.creation-card .creation-card-text-link {
+  width: 100%;
+  height: 80%;
+  border: 1px solid #333;
+  border-radius: inherit inherit 0 0;
+}
+
+.creation-card .text-project-name-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 20%;
+}
+
+.creation-card .text-project-name {
+  vertical-align: middle;
+}
+
+.creation-card .text-project-name::before {
+  content: "{";
+  vertical-align: top;
+  font-weight: 700;
+  display: none;
+}
+
+.creation-card .text-project-name::after {
+  content: "}";
+  vertical-align: top;
+  font-weight: 700;
+  display: none;
+}
+
+.text-header-main-content {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+}
+
+.contact .text-caption-contact {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+.contact .contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 40px;
+}
+
+.contact .contact-links li {
+  margin-right: 20px;
+  transition: all 0.5s;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.contact .contact-links li:hover {
+  margin-top: 10px;
+}
+
+.contact .contact-links a {
+  color: #ffffff;
+}
+
+a.project-tile {
+  color: #ffffff;
+}
+
+a.project-tile:visited {
+  color: #ffffff;
+}
+
+@media screen and (min-width: 992px) {
+  .nav-main ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-main li {
+    flex: auto;
+  }
+
+  .contact .contact-links li {
+    font-size: 2rem;
+  }
+}
+#projects{
+                min-height:300px;
+                background:lavender;
+                display:flex;
+                justify-content: space-around;}
+
+            
+.parallax {
+            
+            background-image: url("port6.jpg");
+
+            
+            min-height:200px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            }
+            .parallax1 {
+            
+            background-image: url("port4.jpg");
+
+            
+            min-height:200px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            }
+            body {font-family: Arial, Helvetica, sans-serif;}
+            * {box-sizing: border-box;}
+            
+            textarea {
+              width: 100%;
+              padding: 12px;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              box-sizing: border-box;
+              margin-top: 6px;
+              margin-bottom: 16px;
+              resize: vertical;
+            }
+            
+            input[type=submit] {
+              background-color: #4CAF50;
+              color: white;
+              padding: 12px 20px;
+              border: none;
+              border-radius: 4px;
+              cursor: pointer;
+            }
+            
+            input[type=submit]:hover {
+              background-color: #45a049;
+            }
+            #subtitle {
+    font-size: 2.2em;
+    margin-right: 175px;
+}
+
+
+        </style>
+    </head>
+    <body>
+        
+          
+<header class="header-top">
+  <nav class="nav-main" id="navbar">
+    <button class="btn btn-nav-main-menu-wrapper">
+      
+      SANDHYA
+    </button>
+    <ul class="nav-main-right-nav">
+      <li>
+        <a href="#Home">Home</a>
+      </li>
+       
+       <li><a href="#About">About</a></li>
+       <li><a href="#skills">Skill</a></li>
+       <li><a href="#creations">My creations</a></li>
+      
+      <li><a href="#contact">Contact</a></li>
+      <li>
+        <div>
+        <a  href="Resume(5).doc" download >
+        <button class="btn btn-download-resume">Download my Resume</button><br>
+        </a>
+      </div>
+
+      </li>
+    </ul>
+  </nav>
+</header>
+
+
+<main>
+  <section id="About" class="about main-content">
+    <div class="about-content">
+      <h1>Hey, I'm sandhya</h1>
+      <p>I really enjoy solving problems as well as making things pretty and easy to use. I can't stop learning new things; the more, the better..</p>
+    </div>
+
+  </section>
+</main>
+ 
+<main>
+   <section id="skills" >
+ 
+    <div style="background-color:lavender ;font-size: 2.5rem;">
+    
+     <div class="col-sm-12" style=";text-align: center;text-decoration-color: #333333">
+            <div ><h3><p>SKILLS AND ABILITIES</p></h3>
+
+           <h5><p>Skilled in Frontend and Backend Programming Languages, Eloquent Javascript and PHP Developer</p></h5></div>
+           </div>
+          <div style="background-color: lavender;text-align: center">
+          
+         <div class="parallax"></div>
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="container"> 
+                      <br>
+                        <h2><b>HTML5</b></h2>
+                        <img src="html.jpg" alt="starter" class="img-thumbnail">                                       
+                        
+                      </div>
+                      
+                </div>
+                <div class="col-md-2">
+                    <div class="container">   
+                    <br> 
+                        <h2><b>CSS3</b></h2>
+                        <img src="css.jpg" alt="veg" class="img-thumbnail">                                    
+                        
+                      </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="container">   
+                    <br> 
+                        <h2><b>JAVASCRIPT</b></h2>
+                        <img src="Javascript.jpg" alt="veg" class="img-thumbnail">                                    
+                        
+                      </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="container"> 
+                    <br>   
+                        <h2><b>BOOTSTRAP</b></h2>
+                        <img src="bootstrap.jpg" alt="veg" class="img-thumbnail">                                    
+                        
+                      </div>
+                </div>
+        
+                <div class="col-md-2">
+                    <div class="container"> 
+                    <br>  
+                        <h2><b>PHP</b></h2>    
+                        <img src="php.jpg" alt="nonveg" class="img-thumbnail">                                 
+                        
+                      </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="container"> 
+                      <br>
+                        <h2><b>MySQl</b></h2>
+                        <img src="mysql.jpg" alt="desserts" class="img-thumbnail">                                       
+                        
+                      </div>
+                    </div>
+
+                </div>
+                <br>
+            </div> 
+
+            <div class="parallax"></div> 
+          </div>
+        </section>
+      </main>
+
+
+</div>
+</section>
+  <section id="About" class="about main-content">
+    <div class="about-content">
+      
+        <h2 class="col-md-9"></h2>
+        <p class="col-md-7"><br>
+          I'm a self taught web designer, developer, entrepreneur based in India. 
+            My passion is to use technology based solutions, to help solve real world challenges. 
+             Competences:Languages and Frameworks: Javascript, HTML5, CSS3, jQuery, Bootstrap4, JavaScript. 
+             </p>
+      
+    </div>
+
+  </section>
+</main> 
+
+<div class="parallax1"></div>
+<section id="creations" class="main-content creations">
+    <header>
+      <h3 class="text-header-main-content">These are some of my creations</h3>
+    </header>
+
+     <div class="jumbotron text-center" > 
+      <div id="projects">
+            <div class="project-tile"><img src="https://pics.freeicons.io/uploads/icons/png/9580547601553228570-128.png" alt="Tribute Page Code"/><br><a target="_blank" href="https://codepen.io/sandhya-palanivel/details/RwKqEJL" class='link'>Tribute Page</a></div>
+            <div class="project-tile"><img src="https://pics.freeicons.io/uploads/icons/png/9580547601553228570-128.png" alt="Landing Page Code"/><br><a target="_blank" href="https://codepen.io/sandhya-palanivel/details/RwKqEJL" class='link'>Food Website</a></div>
+            <div class="project-tile"><img src="https://pics.freeicons.io/uploads/icons/png/9580547601553228570-128.png" alt="Landing Page Code"/><br><a target="_blank" href="" class='link'>portfolio</a></div>
+          
+          
+        </div>
+        </div>
+     
+</section>
+<div class="parallax1"></div>  
+
+
+
+  
+
+<section id="contact" class="contact main-content">
+    <header>
+      <h3 class="text-header-main-content">Let's work together...</h3><br>
+    </header>
+    <main>
+      
+        <div>
+    <p class="text-caption-contact" style="font-style:italic">Find me on social media <br><br>
+      <button style="font-size:24px"> <i class="fa fa-arrow-down" style="color: #333333"></i></button>
+
+       
+
+<div>
+<br>
+    <ul class="contact-links">
+      
+      <li><a href="https://www.naukri.com/mnjuser/homepage">Naukiri</a></li>
+        
+       <li> <a href="mailto:sandhyapalani21@gmail.com">Gmail</a><br></li>
+      
+     <li><a href="https://codepen.io/accounts/signup">Codepen</a><br></li>
+        
+
+      </ul>
+</div>
+  
+
+
+</main>
+</section>
+</body>
+</html>
+      
+      
+
+    
+     
+
+        
+</main>
+</section>
+
+
+
+
